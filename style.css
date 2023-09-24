@@ -6,7 +6,6 @@
     letter-spacing: 3px;
 }
 .navbar{
-    display:inline-block;
     position:fixed;
     top:0px;
     right:0px;
@@ -16,6 +15,7 @@
     background-color:white;
     box-shadow: 2px 4px 5px #7b7b7b;
     text-align:center;
+    z-index:10;
 }
 ul{
     list-style-type: none;
@@ -43,3 +43,25 @@ li {
 .nav li:hover{
     background-color: #cacaca;
 }
+
+#home {
+    position:relative;
+}
+#home .center{
+    color:white;
+    font-size:35px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+#home span{
+    color:white;
+    font-size:35px;
+    border: 1px solid transparent;
+    padding:10px 15px;
+    background-color: #4a4949;
+}
+
+
+
