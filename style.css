@@ -4,6 +4,13 @@
     text-decoration:none;
     color:black;
 }
+.caps{
+    font-size:25px;
+    border-bottom: 1px inset rgb(231, 229, 229);
+    padding:10px;
+}
+
+
 .navbar{
     position:fixed;
     top:0px;
@@ -46,6 +53,7 @@ li {
 
 #home {
     position:relative;
+    margin:20px;
 }
 #home .center1,.center2{
     color:white;
@@ -65,36 +73,19 @@ li {
     padding:10px 15px;
     background-color: #4a4949;
 }
-@media screen and (max-width:600px)
-{
-    .navbar .nav{
-        display:none;
-    }
-    .center1{
-        display:none;
-    }
-    .center2{
-        display:block;
-    }
-}
 
-#project .caps{
-    font-size:25px;
-    border-bottom: 1px inset rgb(231, 229, 229);
-    padding:10px;
+
+#project{
+    margin:20px;
 }
 #project .parent{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+
 }
 .parent .item{
     position:relative;
-    width:20%;
-    height:200px;
     padding:10px;
-    gap:100px;
 }
 .parent .item img{
     width:100%;
@@ -110,10 +101,45 @@ li {
     text-align: center;
 }
 
-#contact .caps{
-    font-size:25px;
-    border-bottom: 1px inset rgb(231, 229, 229);
+
+#about{
+    margin:20px;
+}
+.resume{
+    display:grid;
+    grid-template-columns: repeat(4,25%);
+}
+.resume .item{
     padding:10px;
+}
+.resume .item h1{
+    font-weight: lighter;
+    font-size: 25px;
+}
+.resume .item .work{
+    color:rgb(179, 179, 179);
+}
+.resume .item img{
+    width:100%;
+    height:auto;
+}
+.resume .item button{
+    width:100%;
+    height:auto;
+    padding:10px;
+    text-align: center;
+    font-size: 17px;
+    border:none;
+    background-color: rgb(239, 238, 238);
+    cursor:pointer;
+}
+.resume .item button:hover{
+    background-color: rgb(185, 181, 181);
+}
+
+
+#contact{
+    margin:20px;
 }
 #contact input{
     border: 1px solid black;
@@ -133,6 +159,7 @@ li {
     color:black;
     background-color: rgb(181, 178, 178);
 }
+
 
 .footer{
     position: relative;
@@ -160,5 +187,31 @@ li {
     color:green;
 }
 
-
-
+/*Media Queries*/
+@media screen and (max-width:950px)
+{
+    #project .parent{
+        grid-template-columns: repeat(2,50%);
+    }
+    #about .resume {
+        grid-template-columns: repeat(2,50%);
+    }
+}
+@media screen and (max-width:600px)
+{
+    .navbar .nav{
+        display:none;
+    }
+    .center1{
+        display:none;
+    }
+    .center2{
+        display:block;
+    }
+    #project .parent{
+        grid-template-columns: repeat(1,100%);
+    }
+    #about .resume {
+        grid-template-columns: repeat(1,100%);
+    }
+}
